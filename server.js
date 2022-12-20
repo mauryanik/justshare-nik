@@ -12,14 +12,14 @@ const connectDB = require('./config/db');
 connectDB();
 
 //Cors
-// const corsOptions = {
-//     origin: process.env.ALLOWED_CLIENTS.split(',')
-// }
-app.use(function (request, response, next) {
-    response.header("Access-Control-Allow-Origin", "*");
-    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+const corsOptions = {
+    origin: process.env.ALLOWED_CLIENTS.split(',')
+}
+// app.use(function (request, response, next) {
+//     response.header("Access-Control-Allow-Origin", "*");
+//     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
 
 //Template engine
 app.set('views', path.join(__dirname, '/views'));
